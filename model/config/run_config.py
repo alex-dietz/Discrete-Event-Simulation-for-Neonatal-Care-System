@@ -1,7 +1,7 @@
 
-NUMBER_RUNS = 1
-DAYS = 1
-WARM_UP_TIME = 0
+NUMBER_RUNS = 25
+DAYS = 365
+WARM_UP_TIME = 70
 
 #Select -1 for 2016, 0 for base scenario, 1 for 2023 bed shortages
 HOSPITAL_SCENARIO = -1

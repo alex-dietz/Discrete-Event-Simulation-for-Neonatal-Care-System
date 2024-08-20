@@ -20,7 +20,8 @@ def run_simulation(args):
     seed, run_id, output_folder = args
     global env, NICU_hospitals, high_care_hospitals, medium_care_hospitals, outside_region, hospital_dict, admission_log
 
-    env = sim.Environment(time_unit='days',trace=True)
+    #env = sim.Environment(time_unit='days',trace=True)
+    env = sim.Environment(time_unit='days')
     #env.animate(True)
     sim.random_seed(seed)
     #set np random seed
