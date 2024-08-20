@@ -79,9 +79,15 @@ Both notebooks return information on the four performance indicators for the mod
 4. Weekly Capacity Transfers
 
 For more information on those indicators and the model in general, please consult the thesis here:
+[https://repository.tudelft.nl/record/uuid:e0e5c46d-ac63-429b-8984-310713cb5e4d](https://repository.tudelft.nl/record/uuid:e0e5c46d-ac63-429b-8984-310713cb5e4d)
+
+
 
 ## About
-This project was developed as part of the Master's thesis in Engineering and Policy Analysis at the Delft University of Technology by Alexander Dietz.
+This project was developed as part of the Master's thesis in Engineering and Policy Analysis at the Delft University of Technology by Alexander Dietz. 
+
+The repository is also stored on 4TU.ResearchData and can be referenced using: <br>
+[![DOI](https://data.4tu.nl/v3/datasets/22215562/doi-badge.svg)](https://doi.org/10.4121/65c49906-dcaf-48fd-b942-e1b42b8c6a18)
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
