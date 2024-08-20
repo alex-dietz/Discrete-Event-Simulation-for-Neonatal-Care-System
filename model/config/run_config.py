@@ -1,0 +1,40 @@
+
+NUMBER_RUNS = 1
+DAYS = 1
+WARM_UP_TIME = 0
+
+#Select -1 for 2016, 0 for base scenario, 1 for 2023 bed shortages
+HOSPITAL_SCENARIO = -1
+
+#Select 0 for no increase in outside region arrivals
+DEMAND_SCENARIO = 0
+DEMAND_SCENARIO_ARRIVAL_RATE = 0  #0.28 20% increase in outside arrivals
+
+#Select 1 to allow for NICU admissions below 24 weeks
+NICU_23WEEKS_SCENARIO = 0
+NICU_23WEEKS_SCENARIO_ARRIVALS = 13.32/365
+
+LOS_LEVER = 0
+LOS_PERCENTAGE_CHANGE = 0 #[-10,-20,-30,-40],
+
+CPAP_LEVER = 0
+CPAP_PERCENTAGE_CHANGE = 0
+
+HFO_LEVER = 0
+HFO_PERCENTAGE_CHANGE = 0
+NICU_ASSIGNMENT_LEVER = 0
+NICU_ASSIGNMENT_PERCENTAGE_CHANGE = 0
+
+#Select 1 to allow for decrease in High care admission probability
+HIGH_CARE_ASSIGNMENT_LEVER = 0
+#Select change in high care probability to be tested
+HIGH_CARE_ASSIGNMENT_PERCENTAGE_CHANGE = 0
+PATHWAY_LEVER = 0
+PATHWAY_LEVER_LOS_CHANGE = 0
+
+PHOTOTHERAPY_INTERVENTION = 0
+SEPSIS_INTERVENTION = 0
+NICU_THRESHOLD_LEVER = 0
+NICU_THRESHOLD_LEVER_CHANGE = 0 #subtract weeks
+NICU_WAIT_TIME_LEVER = 0
+NICU_WAIT_TIME_LEVER_CHANGE = 0

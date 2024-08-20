@@ -1,0 +1,7 @@
+salabim==24.0.2
+pandas==2.2.2
+numpy==1.26.4
+greenlet==3.0.3
+seaborn==0.13.2
+scipy==1.13.1
+greenlet==3.0.3
