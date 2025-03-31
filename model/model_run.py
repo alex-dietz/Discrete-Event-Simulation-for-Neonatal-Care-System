@@ -80,6 +80,7 @@ def run_simulation(args):
                                             nicuThresholdLeverChange=NICU_THRESHOLD_LEVER_CHANGE,
                                             nicuWaitTimeLever = NICU_WAIT_TIME_LEVER,
                                             nicuWaitTimeLeverChange = NICU_WAIT_TIME_LEVER_CHANGE,
+                                            predictionModelIntervention = PREDICTION_MODEL_INTERVENTION,
                                             ) 
     save_occupancy_by_hospital(NICU_hospitals + high_care_hospitals + medium_care_hospitals, occupancy_filename, run_id)
 
@@ -98,7 +99,7 @@ def run_simulation(args):
 
 
 if __name__ == '__main__':
-    output_folder = './model/outputs'
+    output_folder = './outputs'
     os.makedirs(output_folder, exist_ok=True)
     
     # Remove old occupancy csv
@@ -123,6 +124,8 @@ if __name__ == '__main__':
         nicuThresholdLeverChange=NICU_THRESHOLD_LEVER_CHANGE,
         nicuWaitTimeLever = NICU_WAIT_TIME_LEVER,
         nicuWaitTimeLeverChange = NICU_WAIT_TIME_LEVER_CHANGE,
+        predictionModelIntervention = PREDICTION_MODEL_INTERVENTION,
+
     ) + '.csv'
     print(occupancy_csv_path)
     admission_csv_path = build_file_path(
@@ -146,6 +149,7 @@ if __name__ == '__main__':
         nicuThresholdLeverChange=NICU_THRESHOLD_LEVER_CHANGE,
         nicuWaitTimeLever = NICU_WAIT_TIME_LEVER,
         nicuWaitTimeLeverChange = NICU_WAIT_TIME_LEVER_CHANGE,
+        predictionModelIntervention = PREDICTION_MODEL_INTERVENTION,
     ) + '.csv'
     if os.path.exists(occupancy_csv_path):
         os.remove(occupancy_csv_path)
