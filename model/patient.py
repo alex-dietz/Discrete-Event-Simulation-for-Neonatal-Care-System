@@ -146,6 +146,21 @@ class Patient(sim.Component):
             self.ward_level = self.next_ward_level
             self.setup_admission()
 
+
+    def wait_for_high_care(self):
+        wait_days = 0
+        while wait_days < 5:
+            hospital = self.find_closest_hospital(self.subregion, self.next_ward_level, self.hospital_dict)
+            if hospital:                
+                self.ward_level = self.next_ward_level
+                self.setup_admission()
+                return
+            self.hold(1)
+            wait_days += 1
+
+        # If no high care bed available after 5 days, transfer to outside region        
+        self.setup_admission()         
+
     def find_closest_hospital(self, patient_subregion, ward_level, hospital_dict):
         if patient_subregion == 'Outside Region' or PATHWAY_LEVER == 1:
             potential_hospitals = [hospital for hospital in hospital_dict[f"{ward_level}_care_hospitals"] if hospital.beds.available_quantity() > 0]
@@ -173,21 +188,7 @@ class Patient(sim.Component):
                         return sim.Pdf(potential_hospitals, 1).sample()
         
         return None
-
-    def wait_for_high_care(self):
-        wait_days = 0
-        while wait_days < 5:
-            hospital = self.find_closest_hospital(self.subregion, self.next_ward_level, self.hospital_dict)
-            if hospital:                
-                self.ward_level = self.next_ward_level
-                self.setup_admission()
-                return
-            self.hold(1)
-            wait_days += 1
-
-        # If no high care bed available after 5 days, transfer to outside region        
-        self.setup_admission()         
-
+    
     def request_admission(self, ward_level):
         hospital = self.find_closest_hospital(self.subregion, ward_level, self.hospital_dict)
         if hospital:
@@ -474,6 +475,8 @@ class Patient(sim.Component):
                     return 'NICU'
                 else:                    
                     return 'high'
+            elif PREDICTION_MODEL_INTERVENTION and self.gestational_age <= 32 * 7 and self.gestational_age >= 30*7 and self.weight >= 1000 and p < 0.7:
+                return 'high'
             else:                
                 return 'NICU'
         elif NICU_THRESHOLD_LEVER and self.gestational_age <= 32 * 7:
