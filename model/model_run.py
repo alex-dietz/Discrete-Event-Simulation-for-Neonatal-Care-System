@@ -81,6 +81,7 @@ def run_simulation(args):
                                             nicuWaitTimeLever = NICU_WAIT_TIME_LEVER,
                                             nicuWaitTimeLeverChange = NICU_WAIT_TIME_LEVER_CHANGE,
                                             predictionModelIntervention = PREDICTION_MODEL_INTERVENTION,
+                                            predictionModelWeekThresholdChange = PREDICTION_MODEL_WEEK_CHANGE,
                                             ) 
     save_occupancy_by_hospital(NICU_hospitals + high_care_hospitals + medium_care_hospitals, occupancy_filename, run_id)
 
@@ -125,6 +126,7 @@ if __name__ == '__main__':
         nicuWaitTimeLever = NICU_WAIT_TIME_LEVER,
         nicuWaitTimeLeverChange = NICU_WAIT_TIME_LEVER_CHANGE,
         predictionModelIntervention = PREDICTION_MODEL_INTERVENTION,
+        predictionModelWeekThresholdChange = PREDICTION_MODEL_WEEK_CHANGE,
 
     ) + '.csv'
     print(occupancy_csv_path)
@@ -150,6 +152,7 @@ if __name__ == '__main__':
         nicuWaitTimeLever = NICU_WAIT_TIME_LEVER,
         nicuWaitTimeLeverChange = NICU_WAIT_TIME_LEVER_CHANGE,
         predictionModelIntervention = PREDICTION_MODEL_INTERVENTION,
+        predictionModelWeekThresholdChange = PREDICTION_MODEL_WEEK_CHANGE,
     ) + '.csv'
     if os.path.exists(occupancy_csv_path):
         os.remove(occupancy_csv_path)

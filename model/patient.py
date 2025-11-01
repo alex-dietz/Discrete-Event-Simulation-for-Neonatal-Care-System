@@ -475,7 +475,7 @@ class Patient(sim.Component):
                     return 'NICU'
                 else:                    
                     return 'high'
-            elif PREDICTION_MODEL_INTERVENTION and self.gestational_age <= 32 * 7 and self.gestational_age >= 30*7 and self.weight >= 1000 and p < 0.7:
+            elif PREDICTION_MODEL_INTERVENTION and self.gestational_age <= 32 * 7 and self.gestational_age >= (32+PREDICTION_MODEL_WEEK_CHANGE)*7 and self.weight >= 1000 and p < 0.7:
                 return 'high'
             else:                
                 return 'NICU'
